@@ -1,0 +1,15 @@
+
+
+###
+POST  http://localhost:3000/loginqr
+Content-Type: application/json
+
+{
+    "email" : "myanpetra99@gmail.com",
+    "password" : "Vinno2605"
+}
+
+
+###
+GET  http://localhost:3000/
+

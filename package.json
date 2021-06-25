@@ -1,0 +1,25 @@
+{
+  "name": "ScanToPass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify serviceworker.js -o bundle.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.17.1"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "browserify-shim": "^3.8.14",
+    "cors": "^2.8.5",
+    "nodemon": "^2.0.7",
+    "qrcode": "^1.4.4",
+    "save": "^2.4.0",
+    "socket.io": "^4.1.2"
+  }
+}
