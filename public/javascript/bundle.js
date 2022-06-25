@@ -8010,17 +8010,17 @@ exports.default = _default;
 const qrgenerator = require('qrcode')
 const axios = require('axios')
 const { v4 } = require('uuid')
-const url = 'http://192.168.1.5:3000/'
+const url = 'http://localhost:3000/'
 
 const canvas = document.getElementById('canvas')
 const uuidv4 = v4()
 console.log(uuidv4)
-qrgenerator.toCanvas(canvas, 'http://192.168.1.5:5500/test.html', e => {
+qrgenerator.toCanvas(canvas, uuidv4, e => {
   if (e) {
     console.log(e)
   }
 })
-var socket = io('http://192.168.1.5:3000', { transport: ['websocket'] })
+var socket = io('http://localhost:3000', { transport: ['websocket'] })
 
 
 socket.emit('join', uuidv4)

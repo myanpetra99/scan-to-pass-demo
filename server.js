@@ -7,12 +7,13 @@ var server = http.createServer(app)
 const isAuth = require('./isAuth')
 const dotenv = require('dotenv')
 dotenv.config()
+const path = require('path')
 const jwt = require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
 app.use(cookieParser())
 const io = require('socket.io')(server, {
   cors: {
-    origin: 'http://192.168.1.5:5500',
+    origin: 'localhost:3000',
     methods: ['GET', 'POST']
   }
 })
@@ -25,6 +26,7 @@ app.use(
   })
 )
 app.use(cors())
+app.use(express.static(path.join(__dirname, 'public')));
 
 const user = {
   id: '260199',
@@ -55,23 +57,20 @@ io.on('connection', socket => {
             { _id: user.id },
             process.env.TOKEN_SECRET
           )
-
           //res.cookie('token', token, { httpOnly: true})
-
-          res.status(200).send(token)
-         
-          
+          res.status(200).send(token)          
           io.to(uuid).emit('qrsuccess', token)
         } else {
           res.sendStatus(403)
-
           console.log('wrong password')
         }
       } else {
         res.sendStatus(403)
-
         console.log('email not found')
       }
+    }else{
+      res.sendStatus(403)
+      console.log('no uuid found')
     }
   })
 
@@ -81,8 +80,6 @@ io.on('connection', socket => {
     io.to(uuid).emit('fullyauth', resp)
     console.log('UUID = ' + uuid)
   })
-
-
 
   socket.on('disconnect', () => {
     console.log('a user has been disconnected')
