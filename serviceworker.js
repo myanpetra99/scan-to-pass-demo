@@ -6,12 +6,13 @@ const url = 'http://localhost:3000/'
 const canvas = document.getElementById('canvas')
 const uuidv4 = v4()
 console.log(uuidv4)
-qrgenerator.toCanvas(canvas, uuidv4, e => {
+qrgenerator.toCanvas(canvas, url+'login/?uuid='+uuidv4, e => {
   if (e) {
     console.log(e)
   }
 })
 var socket = io('http://localhost:3000', { transport: ['websocket'] })
+
 
 
 socket.emit('join', uuidv4)
@@ -27,12 +28,13 @@ socket.on('disconnectifexist',(uuid)=>{
 })
 
 socket.on('fullyauth', (resp)=>{
-  document.getElementById('ifsuccess').innerHTML = resp._id
+  document.getElementById('ifsuccess').innerHTML =  'When u see this, that means QR Codes is working! &#127881'
 })
 
-/*axios.default.post(
-    url+'loginqr/'+uuidv4,{
-            "email" : "myanpetra99@gmail.com",
-            "password" : "Vinno2605"
-    }
-);*/
+// axios.default.post(
+//     url+'loginqr',{
+//             "uuid":uuidv4,
+//             "email" : "myanpetra99@gmail.com",
+//             "password" : "Vinno2605"
+//     }
+// );

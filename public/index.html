@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SCAN TO PASS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
       @layer utilities {
@@ -15,22 +15,25 @@
 </head>
 <body>
     <section class="container min-w-full min-h-screen bg-indigo-500 max-w-screen-lg grid grid-cols-1  content-center">
-        <h1 class="font-mono text-amber-50 text-2xl text-center">Scan to Pass</h1>
+        <h1 class="font-mono text-amber-50 text-2xl text-center font-bold">Scan to Pass</h1>
         <h2 class="font-mono text-amber-50 text-xl text-center">an implementation of Login using QR</h2>
        <div class="grid grid-cols-2 gap-4 content-center mx-auto my-3">
         <canvas id="canvas" class="mx-auto p-2 shadow-xl bg-indigo-200 rounded-md ">
         </canvas>
         <div class="flex">
             
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 ml-2  self-center stroke-cyan-500 flex-1 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 ml-2  self-center stroke-cyan-500 flex-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 
               </svg>
-              <p class="flex-1 self-center font-mono text-amber-50 text-2xl animate-pulse">Try to Scan</p>
+              <p class="flex-1 self-center font-mono text-amber-50 text-2xl">Try to Scan</p>
         </div>
     
        </div>
-        <div id="ifsuccess" class="mx-auto"></div>
+        
+        <div id="ifsuccess" class="mx-auto font-mono text-amber-50 text-2xl mt-6 animate-pulse">
+          
+        </div>
     </section>
 </body>
 

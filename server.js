@@ -29,9 +29,9 @@ app.use(cors())
 app.use(express.static(path.join(__dirname, 'public')));
 
 const user = {
-  id: '260199',
+  id: '123',
   email: 'myanpetra99@gmail.com',
-  pass: 'hyouka1999'
+  pass: 'Vinno2605'
 }
 
 io.on('connection', socket => {
@@ -43,6 +43,11 @@ io.on('connection', socket => {
 
   app.get('/', (req, res) => {
     res.status(200).send('SCAN TO LOGIN')
+    console.log('OK')
+  })
+
+  app.get('/login', (req, res) => {
+    res.status(200).sendFile(path.join(__dirname, 'public/test.html'))
     console.log('OK')
   })
 
@@ -58,7 +63,7 @@ io.on('connection', socket => {
             process.env.TOKEN_SECRET
           )
           //res.cookie('token', token, { httpOnly: true})
-          res.status(200).send(token)          
+          res.sendStatus(200)          
           io.to(uuid).emit('qrsuccess', token)
         } else {
           res.sendStatus(403)
