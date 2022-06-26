@@ -8040,13 +8040,6 @@ socket.on('fullyauth', (resp)=>{
   document.getElementById('ifsuccess').innerHTML =  'When u see this, that means QR Codes is working! &#127881'
 })
 
-// axios.default.post(
-//   url+'loginqr',{
-//           "uuid":uuidv4,
-//           "email" : "myanpetra99@gmail.com",
-//           "password" : "Vinno2605"
-//   }
-// );
 
 
 },{"axios":5,"qrcode":34,"uuid":62}]},{},[77]);

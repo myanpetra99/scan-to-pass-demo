@@ -30,8 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const user = {
   id: '123',
-  email: 'myanpetra99@gmail.com',
-  pass: 'Vinno2605'
+  email: 'admin@gmail.com',
+  pass: '@dmin123'
 }
 
 io.on('connection', socket => {
@@ -47,7 +47,7 @@ io.on('connection', socket => {
   })
 
   app.get('/login', (req, res) => {
-    res.status(200).sendFile(path.join(__dirname, 'public/test.html'))
+    res.status(200).sendFile(path.join(__dirname, 'public/login.html'))
     console.log('OK')
   })
 
