@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify serviceworker.js -o bundle.js"
+    "start": "node index.js",
+    "build": "ng build",
+    "heroku-postbuild": "ng build --prod" // this will be run on Heroku
   },
   "keywords": [],
   "author": "",
