@@ -12,7 +12,7 @@ const cookieParser = require('cookie-parser')
 app.use(cookieParser())
 const io = require('socket.io')(server, {
   cors: {
-    origin: 'localhost:3000',
+    origin: 'https://loginusingqrtest.herokuapp.com/',
     methods: ['GET', 'POST']
   }
 })

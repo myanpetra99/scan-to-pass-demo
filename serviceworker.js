@@ -1,7 +1,7 @@
 const qrgenerator = require('qrcode')
 const axios = require('axios')
 const { v4 } = require('uuid')
-const url = 'http://localhost:3000/'
+const url = 'https://loginusingqrtest.herokuapp.com/'
 
 const canvas = document.getElementById('canvas')
 const uuidv4 = v4()
@@ -11,7 +11,7 @@ qrgenerator.toCanvas(canvas, url+'login/?uuid='+uuidv4, e => {
     console.log(e)
   }
 })
-var socket = io('http://localhost:3000', { transport: ['websocket'] })
+var socket = io(url, { transport: ['websocket'] })
 
 
 
