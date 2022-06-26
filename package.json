@@ -4,10 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "build": "ng build",
-    "heroku-postbuild": "ng build --prod",
-    "postinstall": "./node_modules/.bin/ng build --prod"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
