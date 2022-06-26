@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "build": "ng build",
-    "heroku-postbuild": "ng build --prod" // this will be run on Heroku
+    "heroku-postbuild": "ng build --prod",
+    "postinstall": "./node_modules/.bin/ng build --prod"
   },
   "keywords": [],
   "author": "",
