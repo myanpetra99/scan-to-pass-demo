@@ -1,7 +1,6 @@
 const express = require('express')
 const http = require('http')
 const cors = require('cors')
-const e = require('cors')
 const app = express()
 var server = http.createServer(app)
 const isAuth = require('./isAuth')
