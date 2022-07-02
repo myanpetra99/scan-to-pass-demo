@@ -62,7 +62,7 @@ io.on('connection', socket => {
             process.env.TOKEN_SECRET
           )
           //res.cookie('token', token, { httpOnly: true})
-          res.sendStatus(200)          
+          res.status(200).sendFile(path.join(__dirname, 'public/success.html'))          
           io.to(uuid).emit('qrsuccess', token)
         } else {
           res.sendStatus(403)
