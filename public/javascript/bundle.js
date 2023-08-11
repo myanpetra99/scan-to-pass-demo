@@ -8010,7 +8010,7 @@ exports.default = _default;
 const qrgenerator = require('qrcode')
 const axios = require('axios')
 const { v4 } = require('uuid')
-const url = process.env.URL || 'https://scan-to-pass-demo.vercel.app/';
+const url = window.location.origin;
 
 const canvas = document.getElementById('canvas')
 const uuidv4 = v4()
