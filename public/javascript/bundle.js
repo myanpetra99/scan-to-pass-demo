@@ -8015,7 +8015,7 @@ const url = window.location.origin;
 const canvas = document.getElementById('canvas')
 const uuidv4 = v4()
 console.log(uuidv4)
-qrgenerator.toCanvas(canvas, url+'login/?uuid='+uuidv4, e => {
+qrgenerator.toCanvas(canvas, url+'/login/?uuid='+uuidv4, e => {
   if (e) {
     console.log(e)
   }
