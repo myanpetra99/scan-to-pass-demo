@@ -10,12 +10,18 @@ const path = require('path')
 const jwt = require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
 app.use(cookieParser())
+const allowedOrigins = [
+  'http://localhost:3000', // Or whatever your local dev port is
+  `https://${process.env.VERCEL_URL}`, // This will be set by Vercel during deployment
+  'https://scan-to-pass-demo.vercel.app' // Your production URL
+];
+
 const io = require('socket.io')(server, {
   cors: {
-    origin: 'https://scan-to-pass-demo.vercel.app/',
+    origin: allowedOrigins,
     methods: ['GET', 'POST']
   }
-})
+});
 let uuid = ''
 
 app.use(express.json())
@@ -24,7 +30,11 @@ app.use(
     extended: true
   })
 )
-app.use(cors())
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 const user = {
